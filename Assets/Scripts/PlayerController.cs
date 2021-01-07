@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private int score = 0;
     public int health = 5;
     public Text scoreText;
+    public Text healthText;
 
     //This is a reference to the Rigidbody component called "rb"
     public Rigidbody rb;
@@ -67,7 +68,8 @@ void OnTriggerEnter(Collider other)
         if (other.tag == "Trap")
         {
             health -= 1;
-            Debug.Log($"Health: {health}");
+            // Debug.Log($"Health: {health}");
+            SetHealthText();
         }
 
         if (other.tag == "Goal")
@@ -79,5 +81,10 @@ void OnTriggerEnter(Collider other)
 void SetScoreText()
     {
         scoreText.text = $"Score: {score.ToString()}";
-    }    
+    }
+
+void SetHealthText()
+    {
+        healthText.text = $"Health: {health.ToString()}";
+    }      
 }
