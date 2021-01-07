@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; //Load scene
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 300f;
     private int score = 0;
     public int health = 5;
+    public Text scoreText;
 
     //This is a reference to the Rigidbody component called "rb"
     public Rigidbody rb;
@@ -57,7 +59,8 @@ void OnTriggerEnter(Collider other)
         if (other.tag == "Pickup")
         {
             score += 1;
-            Debug.Log($"Score: {score}");
+            // Debug.Log($"Score: {score}");
+            SetScoreText();
             other.gameObject.SetActive(false);
         }
         
@@ -72,4 +75,9 @@ void OnTriggerEnter(Collider other)
             Debug.Log("You Win!");
         }        
     }
+
+void SetScoreText()
+    {
+        scoreText.text = $"Score: {score.ToString()}";
+    }    
 }
