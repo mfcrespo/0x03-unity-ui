@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     public int health = 5;
     public Text scoreText;
     public Text healthText;
+    public GameObject winLose;
+    public Image winLoseImg;
+    public Text winLoseText;
 
     //This is a reference to the Rigidbody component called "rb"
     public Rigidbody rb;
@@ -74,7 +77,11 @@ void OnTriggerEnter(Collider other)
 
         if (other.tag == "Goal")
         {
-            Debug.Log("You Win!");
+            // Debug.Log("You Win!");
+            winLose.SetActive(true);
+            winLoseText.text = "You Win!";
+            winLoseText.color = new Color(0, 0, 0, 1);
+            winLoseImg.color = new Color(0, 1, 0);            
         }        
     }
 
