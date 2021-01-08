@@ -26,6 +26,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0); //load the main menu
+        }
+
         if (health == 0)
         {
             // Debug.Log("Game Over!");
