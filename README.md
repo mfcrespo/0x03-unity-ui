@@ -5,7 +5,7 @@
 ## Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
-## General
+## General Objectives
 * How to publish a build
 * How to reorder scenes in a build
 * How to build a standalone application for Windows, Mac, and Linux
